@@ -1,0 +1,20 @@
+account:
+  username: PeterPanter
+  password: "Panter@123"
+  welcomeMessage: Welcome PeterPanter
+
+monitor:
+  first:
+    name: Apple monitor 24
+    price: "$400"
+  second:
+    name: ASUS Full HD
+    price: "$230"
+
+product:
+  name: JackSon
+  country: Russia
+  city: Moscow
+  creditCard: "8173239123"
+  month: "08"
+  year: "2028"

@@ -1,4 +1,7 @@
 const { defineConfig } = require('cypress');
+const fs = require('fs');
+const path = require('path');
+const yaml = require('js-yaml');
 const mysql = require('mysql')
 const createBundler = require('@bahmutov/cypress-esbuild-preprocessor');
 const { addCucumberPreprocessorPlugin } = require('@badeball/cypress-cucumber-preprocessor');
@@ -28,16 +31,20 @@ module.exports = defineConfig({
       on('task',
         {
           queryDb: query => { return queryTestDb(query, config) },
+          loadUiTestData: () => yaml.load(fs.readFileSync(
+            path.join(__dirname, 'cypress', 'support', 'TestData', 'ui-test-data.yaml'),
+            'utf8',
+          )),
         });
       return config;
     },
   },
   "env": {
     "db": {
-      "host": "db4free.net",
-      "user": "mobilestoreuser",
-      "password": "mobilestoreuser",
-      "database": "mymobilestore"
+      "host": process.env.DB_HOST,
+      "user": process.env.DB_USER,
+      "password": process.env.DB_PASSWORD,
+      "database": process.env.DB_NAME
     }
   }
 })

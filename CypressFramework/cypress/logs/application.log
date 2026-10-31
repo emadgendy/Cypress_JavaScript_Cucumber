@@ -173,3 +173,101 @@
 [2026-10-28T21:11:11.237Z] Launched Application
 [2026-10-28T23:52:25.861Z] Launched Application
 [2026-10-28T23:52:27.581Z] Entered login details
+[2026-10-31T06:31:04.635Z] Launched Application
+[2026-10-31T06:31:11.109Z] Launched Application
+[2026-10-31T06:31:17.468Z] Launched Application
+[2026-10-31T06:31:29.561Z] Launched Application
+[2026-10-31T06:31:41.065Z] Launched Application
+[2026-10-31T06:31:42.272Z] Entered User details-->SignUp Test
+[2026-10-31T06:31:47.473Z] Launched Application
+[2026-10-31T06:31:48.917Z] Verified User SignUp-->SignUp Test
+[2026-10-31T06:31:49.150Z] Launched Application
+[2026-10-31T06:31:49.658Z] Verified User SignUp-->SignUp Test
+[2026-10-31T06:48:28.336Z] Launched Application
+[2026-10-31T06:48:30.008Z] Entered login details
+[2026-10-31T06:48:36.616Z] Launched Application
+[2026-10-31T06:48:37.997Z] Entered login details
+[2026-10-31T06:48:38.635Z] Launched Application
+[2026-10-31T06:48:39.914Z] Entered login details
+[2026-10-31T06:48:40.449Z] Launched Application
+[2026-10-31T06:48:41.695Z] Entered login details
+[2026-10-31T06:48:52.124Z] Launched Application
+[2026-10-31T06:48:53.542Z] Entered login details
+[2026-10-31T06:48:58.573Z] Product Added to Cart and Placed Order
+[2026-10-31T06:49:02.088Z] User detaile entered & Clicked On Purchased
+[2026-10-31T06:49:02.176Z] Order Id :Id: 8383249Amount: 3240 USDCard Number: 8173239123Name: JackSonDate: 31/9/2026
+[2026-10-31T06:49:03.759Z] Validated Order & Logout
+[2026-10-31T06:49:09.084Z] Launched Application
+[2026-10-31T06:49:10.523Z] Entered User details-->SignUp Test
+[2026-10-31T06:49:10.748Z] Verified User SignUp-->SignUp Test
+[2026-10-31T06:49:10.951Z] Launched Application
+[2026-10-31T06:49:12.287Z] Verified User SignUp-->SignUp Test
+[2026-10-31T06:49:12.503Z] Launched Application
+[2026-10-31T06:49:12.988Z] Verified User SignUp-->SignUp Test
+[2026-10-31T06:52:49.120Z] Launched Application
+[2026-10-31T06:52:50.702Z] Entered login details
+[2026-10-31T06:52:58.266Z] Launched Application
+[2026-10-31T06:53:00.277Z] Entered login details
+[2026-10-31T06:53:12.296Z] Launched Application
+[2026-10-31T06:53:13.691Z] Entered login details
+[2026-10-31T06:53:23.585Z] Launched Application
+[2026-10-31T06:53:25.089Z] Entered User details-->SignUp Test
+[2026-10-31T06:53:29.699Z] Launched Application
+[2026-10-31T06:53:33.417Z] Verified User SignUp-->SignUp Test
+[2026-10-31T06:53:33.833Z] Launched Application
+[2026-10-31T06:53:34.302Z] Verified User SignUp-->SignUp Test
+[2026-10-31T06:56:42.695Z] Launched Application
+[2026-10-31T06:56:49.116Z] Entered login details
+[2026-10-31T06:56:56.842Z] Launched Application
+[2026-10-31T06:57:00.687Z] Entered login details
+[2026-10-31T06:57:10.883Z] Launched Application
+[2026-10-31T06:57:14.359Z] Entered login details
+[2026-10-31T06:57:27.202Z] Launched Application
+[2026-10-31T06:57:28.839Z] Entered User details-->SignUp Test
+[2026-10-31T06:57:32.545Z] Verified User SignUp-->SignUp Test
+[2026-10-31T06:57:32.853Z] Launched Application
+[2026-10-31T06:57:35.394Z] Verified User SignUp-->SignUp Test
+[2026-10-31T06:57:35.667Z] Launched Application
+[2026-10-31T06:57:36.188Z] Verified User SignUp-->SignUp Test
+[2026-10-31T06:59:11.779Z] Launched Application
+[2026-10-31T06:59:15.755Z] Entered login details
+[2026-10-31T06:59:23.095Z] Launched Application
+[2026-10-31T06:59:26.716Z] Entered login details
+[2026-10-31T06:59:34.941Z] Product Added to Cart and Placed Order
+[2026-10-31T06:59:37.998Z] User detaile entered & Clicked On Purchased
+[2026-10-31T06:59:38.094Z] Order Id :Id: 2290650Amount: 720 USDCard Number: 8173239123Name: JackSonDate: 31/9/2026
+[2026-10-31T06:59:39.488Z] Validated Order & Logout
+[2026-10-31T07:01:35.172Z] Launched Application
+[2026-10-31T07:01:37.122Z] Entered login details
+[2026-10-31T07:01:43.016Z] Launched Application
+[2026-10-31T07:01:45.722Z] Entered login details
+[2026-10-31T07:01:51.855Z] Launched Application
+[2026-10-31T07:01:53.648Z] Entered login details
+[2026-10-31T07:01:58.506Z] Product Added to Cart and Placed Order
+[2026-10-31T07:02:01.572Z] User detaile entered & Clicked On Purchased
+[2026-10-31T07:02:01.662Z] Order Id :Id: 2772688Amount: 360 USDCard Number: 8173239123Name: JackSonDate: 31/9/2026
+[2026-10-31T07:02:03.205Z] Validated Order & Logout
+[2026-10-31T07:02:09.397Z] Launched Application
+[2026-10-31T07:02:10.917Z] Entered User details-->SignUp Test
+[2026-10-31T07:02:11.174Z] Verified User SignUp-->SignUp Test
+[2026-10-31T07:02:11.361Z] Launched Application
+[2026-10-31T07:02:12.653Z] Verified User SignUp-->SignUp Test
+[2026-10-31T07:02:12.820Z] Launched Application
+[2026-10-31T07:02:13.328Z] Verified User SignUp-->SignUp Test
+[2026-10-31T07:05:55.291Z] Launched Application
+[2026-10-31T07:05:57.051Z] Entered login details
+[2026-10-31T07:06:06.259Z] Launched Application
+[2026-10-31T07:06:07.935Z] Entered login details
+[2026-10-31T07:06:15.477Z] Launched Application
+[2026-10-31T07:06:17.092Z] Entered login details
+[2026-10-31T07:06:21.668Z] Product Added to Cart and Placed Order
+[2026-10-31T07:06:24.808Z] User detaile entered & Clicked On Purchased
+[2026-10-31T07:06:24.903Z] Order Id :Id: 1043338Amount: 360 USDCard Number: 8173239123Name: JackSonDate: 31/9/2026
+[2026-10-31T07:06:26.511Z] Validated Order & Logout
+[2026-10-31T07:06:31.857Z] Launched Application
+[2026-10-31T07:06:33.225Z] Entered User details-->SignUp Test
+[2026-10-31T07:06:33.422Z] Verified User SignUp-->SignUp Test
+[2026-10-31T07:06:33.623Z] Launched Application
+[2026-10-31T07:06:35.004Z] Verified User SignUp-->SignUp Test
+[2026-10-31T07:06:35.205Z] Launched Application
+[2026-10-31T07:06:35.730Z] Verified User SignUp-->SignUp Test

@@ -12,7 +12,7 @@ import {
 } from '../../support/apiUtils';
 
 const faker = new Faker({ locale: [en] });
-const loginUser = require('../../fixtures/loginuser.json');
+const loginUser = require('../../support/TestData/loginuser.json');
 let response;
 let accessToken;
 let payload;

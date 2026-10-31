@@ -61,6 +61,7 @@ To run database tests, use:
 ```
 npm run dbtest
 ```
+Database tests require `DB_HOST`, `DB_USER`, `DB_PASSWORD`, and `DB_NAME` environment variables. The database scenario is skipped when these are not configured.
 To run every Gherkin scenario, use:
 ```
 npm test

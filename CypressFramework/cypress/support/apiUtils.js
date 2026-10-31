@@ -1,9 +1,10 @@
 const apiconfig = require('../apiconfig.json');
 
-function apiRequest(method, path, accessToken, body) {
+function apiRequest(method, path, accessToken, body, timeout = 30000) {
   const request = {
     method,
     url: `${apiconfig.baseUrl}${path}`,
+    timeout,
     headers: {
       Authorization: accessToken ? `Bearer ${accessToken}` : '',
     },
@@ -18,7 +19,7 @@ function apiRequest(method, path, accessToken, body) {
 }
 
 function login(email, password) {
-  return apiRequest('POST', apiconfig.endpoints.login, undefined, { email, password })
+  return apiRequest('POST', apiconfig.endpoints.login, undefined, { email, password }, 120000)
     .then((response) => ({
       response,
       access_token: response.body.access_token,

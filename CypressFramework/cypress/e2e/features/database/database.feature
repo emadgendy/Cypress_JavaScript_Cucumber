@@ -1,3 +1,4 @@
+@database
 Feature: Database queries
 
   Scenario: Query female users ordered by most recent user
