@@ -2,13 +2,13 @@
     "cucumberJump.projects": [
         {
             "name": "apiTest",
-            "featureGlob": "CypressFramework/cypress/e2e/apiTest/**/*.feature",
-            "stepsGlob": "CypressFramework/cypress/e2e/step_definitions/**/*.js"
+            "featureGlob": "cypress/e2e/apiTest/**/*.feature",
+            "stepsGlob": "cypress/e2e/step_definitions/**/*.js"
         },
         {
             "name": "e2e",
-            "featureGlob": "CypressFramework/cypress/e2e/features/**/*.feature",
-            "stepsGlob": "CypressFramework/cypress/e2e/step_definitions/**/*.js"
+            "featureGlob": "cypress/e2e/features/**/*.feature",
+            "stepsGlob": "cypress/e2e/step_definitions/**/*.js"
         }
     ]
 }
