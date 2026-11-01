@@ -8,8 +8,20 @@ const loginPage = new Login();
 const signUpPage = new SignUp();
 const monitorPage = new Monitor();
 const productPage = new AddProduct();
+const pageObjects = {
+  Login: loginPage,
+  SignUp: signUpPage,
+  Monitor: monitorPage,
+  AddProduct: productPage,
+};
 const pages = {
   Login: {
+    welcomemsg: loginPage.welcomemsg,
+    requestStatus: () => cy.wait('@loginRequest')
+      .its('response.statusCode')
+      .then(String),
+    alert: () => cy.wrap(loginAlert)
+      .then(() => (loginAlert.called ? loginAlert.lastCall.args[0] : '')),
     navigation: {
       loginButton: loginPage.loginbtn,
     },
@@ -18,6 +30,9 @@ const pages = {
     },
   },
   SignUp: {
+    alert: () => cy.wrap(signupAlert)
+      .should('have.been.called')
+      .then(() => signupAlert.lastCall.args[0]),
     navigation: {
       signUpButton: signUpPage.registerbtn,
     },
@@ -26,11 +41,20 @@ const pages = {
     },
   },
   Monitor: {
+    monitor1: '.card-title a:eq(0)',
+    monitor2: '.card-title a:eq(1)',
+    m1price: '.card-block h5:eq(0)',
+    m2price: '.card-block h5:eq(1)',
     category: {
       monitorButton: monitorPage.monitorbtn,
     },
   },
   AddProduct: {
+    price: productPage.price,
+    cartProduct: '#tbodyid tr',
+    totalprice: productPage.totalprice,
+    thankmsg: productPage.thankmsg,
+    login: productPage.login,
     category: {
       phoneLink: productPage.phonesbtn,
     },
@@ -105,6 +129,48 @@ When('I click on {string} {word}', (pagePath, elementType) => {
   return click;
 });
 
+When(/^I enter value (.+) in "([^"]+)"$/, (value, pageElement) => {
+  const [pageName, elementProperty, ...extraParts] = pageElement.trim().split(/\s+/);
+  const propertyName = elementProperty?.replace(/^\./, '');
+  const selector = extraParts.length === 0 && propertyName
+    ? pageObjects[pageName]?.[propertyName]
+    : undefined;
+
+  if (typeof selector !== 'string') {
+    throw new Error(`Page element not found: ${pageElement}`);
+  }
+  return cy.get(selector)
+    .should('be.visible')
+    .clear()
+    .type(value);
+});
+
+Then('I see {string} text to {word} {string}', (pageElement, assertionType, expectedValue) => {
+  const [pageName, elementName] = pageElement.split('.');
+  const element = pages[pageName]?.[elementName];
+
+  if (!element) {
+    throw new Error(`Element not found: ${pageElement}`);
+  }
+
+  const assertion = {
+    equal: 'eq',
+    contain: 'include',
+  }[assertionType];
+  if (!assertion) {
+    throw new Error(`Unsupported assertion type: ${assertionType}`);
+  }
+
+  const text = typeof element === 'function'
+    ? element()
+    : cy.get(element)
+      .should('be.visible')
+      .invoke('text')
+      .then((value) => value.trim());
+
+  return text.should(assertion, expectedValue);
+});
+
 function logUiPerformance(activity) {
   return cy.then(() => cy.logger('performance', `TotalTime taken to ${activity}: ${Date.now() - uiStartTime}ms`));
 }
@@ -125,7 +191,7 @@ When('I enter the registered account credentials', () => {
 When('I enter a unique signup username and registered password', () => {
   return loadUiTestData().then((data) => {
     testAccount = {
-      username: Date.now().toString(36).slice(-4),
+      username: Date.now().toString(36),
       password: data.account.password,
     };
     const signup = new SignUp();
@@ -137,8 +203,8 @@ When('I enter a unique signup username and registered password', () => {
 
 Given('I open the DemoBlaze application', () => {
   uiStartTime = Date.now();
-  loginAlert = cy.stub();
   signupAlert = cy.stub();
+  loginAlert = cy.stub();
   activeAlert = null;
   testAccount = null;
   cy.on('window:alert', (message) => {
@@ -148,21 +214,10 @@ Given('I open the DemoBlaze application', () => {
   });
   cy.visit('https://www.demoblaze.com/');
   cy.intercept('POST', '**/login').as('loginRequest');
-  cy.intercept('POST', '**/signup').as('signupRequest');
   cy.intercept('POST', '**/bycat').as('loadCategory');
   cy.intercept('POST', '**/addtocart').as('addProductToCart');
   cy.intercept('POST', '**/viewcart').as('loadCart');
   cy.logger('application', 'Launched Application');
-});
-
-Then("the registered user's welcome message is displayed", () => {
-  return cy.wait('@loginRequest')
-    .its('response.statusCode')
-    .should('eq', 200)
-    .then(() => cy.wrap(loginAlert)
-      .should('not.have.been.called')
-      .then(() => cy.get(loginPage.welcomemsg).should('contain.text', 'Welcome')))
-    .then(() => logUiPerformance('LoginUser'));
 });
 
 When('I enter the registered signup credentials', () => {
@@ -174,44 +229,16 @@ When('I enter the registered signup credentials', () => {
   });
 });
 
-Then('the signup alert contains {string}', (expectedMessage) => {
-  const alertCheck = () => cy.wrap(signupAlert)
-    .should('have.been.calledWith', expectedMessage);
-  const request = expectedMessage === 'Please fill out Username and Password.'
-    ? cy.then(alertCheck)
-    : cy.wait('@signupRequest').then(alertCheck);
-
-  return request.then(() => {
-    cy.logger('application', 'Verified User SignUp-->SignUp Test');
-    return logUiPerformance('registerUser');
-  });
+When('I record UI performance for {string}', (activity) => {
+  return logUiPerformance(activity);
 });
 
-Then('both expected monitors and prices are displayed', () => {
-  return loadUiTestData().then((data) => {
-    const monitor = new Monitor();
-    monitor.ValidateMonitor1(data.monitor.first.name);
-    monitor.Validatemonitor1Price(data.monitor.first.price);
-    monitor.ValidateMonitor2(data.monitor.second.name);
-    monitor.Validatemonitor2Price(data.monitor.second.price);
-  }).then(() => logUiPerformance("ValidateMonitor's"));
-});
-
-Then('the sample phone price is displayed', () => {
-  cy.get(productPage.price).should('have.text', '$360 *includes tax');
-});
-
-Then('the sample phone is added to the cart', () => {
+When('the sample phone add-to-cart request completes', () => {
   cy.wait('@addProductToCart');
 });
 
-Then('the cart contains the sample phone', () => {
-  return cy.wait('@loadCart').then(() => {
-    cy.contains('#tbodyid tr', 'Samsung galaxy s6').should('contain.text', '360');
-    cy.get(productPage.totalprice).invoke('text').then((total) => {
-      expect(Number(total)).to.be.greaterThan(0);
-    });
-  });
+When('the cart request completes', () => {
+  cy.wait('@loadCart');
 });
 
 When('I submit the sample shipping details', () => {
@@ -226,16 +253,10 @@ When('I submit the sample shipping details', () => {
   });
 });
 
-Then('the order is confirmed', () => {
-  return cy.get(productPage.thankmsg)
-    .should('have.text', 'Thank you for your purchase!')
-    .then(() => cy.get(productPage.orderdetails).then(($value) => {
-      cy.logger('application', `Order Id :${$value.text()}`);
-    }))
+When('I log the order details', () => {
+  return cy.get(productPage.orderdetails).then(($value) => {
+    cy.logger('application', `Order Id :${$value.text()}`);
+  })
     .then(() => cy.get(productPage.orderdetails).screenshot('OrderPurchased'))
     .then(() => logUiPerformance('Purchase Product'));
-});
-
-Then('the user is logged out', () => {
-  cy.get(productPage.login).should('have.text', 'Log in');
 });

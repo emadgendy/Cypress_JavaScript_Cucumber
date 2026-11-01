@@ -7,8 +7,12 @@ Feature: User login
     When I click on "SignUp.navigation" button
     And I enter a unique signup username and registered password
     And I click on "SignUp.form" button
-    Then the signup alert contains "Sign up successful."
+    Then I see "SignUp.alert" text to equal "Sign up successful."
+    And I record UI performance for "registerUser"
     When I click on "Login.navigation" button
     And I enter the registered account credentials
     And I click on "Login.form" button
-    Then the registered user's welcome message is displayed
+    Then I see "Login.requestStatus" text to equal "200"
+    And I see "Login.alert" text to equal ""
+    Then I see "Login.welcomemsg" text to contain "Welcome"
+    And I record UI performance for "LoginUser"

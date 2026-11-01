@@ -71,7 +71,7 @@ To run every Gherkin scenario, use:
 ```
 npm test
 ```
-To run only the registered-account login scenario from PowerShell, use:
+### To run only the register-account login scenario from powerShell, use:
 ```powershell
 npx cypress run --spec "cypress/e2e/features/ui/accounts.feature" --env tags="@login"
 ```

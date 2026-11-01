@@ -7,15 +7,18 @@ Feature: Account registration
     When I click on "SignUp.navigation" button
     And I enter a unique signup username and registered password
     And I click on "SignUp.form" button
-    Then the signup alert contains "Sign up successful."
+    Then I see "SignUp.alert" text to equal "Sign up successful."
+    And I record UI performance for "registerUser"
 
   Scenario: Reject an existing account
     When I click on "SignUp.navigation" button
     And I enter the registered signup credentials
     And I click on "SignUp.form" button
-    Then the signup alert contains "This user already exist."
+    Then I see "SignUp.alert" text to equal "This user already exist."
+    And I record UI performance for "registerUser"
 
   Scenario: Require signup credentials
     When I click on "SignUp.navigation" button
     And I click on "SignUp.form" button
-    Then the signup alert contains "Please fill out Username and Password."
+    Then I see "SignUp.alert" text to equal "Please fill out Username and Password."
+    And I record UI performance for "registerUser"

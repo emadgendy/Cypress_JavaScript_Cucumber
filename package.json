@@ -8,8 +8,8 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
-    "uitest": "cross-env REPORT_NAME=UIReport cypress run --spec \"cypress/e2e/features/ui/**/*.feature\"",
-    "apitest": "cross-env REPORT_NAME=APIReport cypress run --spec \"cypress/e2e/features/api/**/*.feature,cypress/e2e/apiTest/**/*.feature,cypress/e2e/apiTest/**/*.spec.js\"",
+    "uitest": "cross-env REPORT_NAME=UIReport cypress run --spec \"cypress/e2e/features/uiTest/**/*.feature\"",
+    "apitest": "cross-env REPORT_NAME=APIReport cypress run --spec \"cypress/e2e/features/apiTest/**/*.feature,cypress/e2e/apiTest/**/*.feature,cypress/e2e/apiTest/**/*.spec.js\"",
     "cypress-dashboard": "npx cypress run --record --key 414d3363-6fe8-49db-ad55-3fcd3081d458",
     "dbtest": "cypress run --spec \"cypress/e2e/features/database/**/*.feature\""
   },
@@ -18,7 +18,7 @@
       "cypress/e2e/step_definitions/**/*.js"
     ]
   },
-  "author": "Anshul",
+  "author": "Emad Gendy",
   "license": "ISC",
   "dependencies": {
     "@faker-js/faker": "^8.0.2",
