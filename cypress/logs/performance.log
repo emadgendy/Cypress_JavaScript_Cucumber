@@ -207,3 +207,30 @@
 [2026-11-01T18:36:32.593Z] TotalTime taken to registerUser: 2202ms
 [2026-11-01T18:36:34.087Z] TotalTime taken to registerUser: 1421ms
 [2026-11-01T18:36:34.789Z] TotalTime taken to registerUser: 648ms
+[2026-11-01T19:04:51.338Z] TotalTime taken to registerUser: 1965ms
+[2026-11-01T19:04:52.953Z] TotalTime taken to LoginUser: 3579ms
+[2026-11-01T19:04:53.378Z] TotalTime taken to ValidateMonitor's: 4005ms
+[2026-11-01T19:05:01.319Z] TotalTime taken to registerUser: 2892ms
+[2026-11-01T19:05:05.699Z] TotalTime taken to LoginUser: 7271ms
+[2026-11-01T19:05:12.005Z] TotalTime taken to registerUser: 1912ms
+[2026-11-01T19:05:20.076Z] TotalTime taken to registerUser: 1819ms
+[2026-11-01T19:05:21.576Z] TotalTime taken to registerUser: 1449ms
+[2026-11-01T19:05:22.206Z] TotalTime taken to registerUser: 586ms
+[2026-11-01T19:07:11.140Z] TotalTime taken to registerUser: 2463ms
+[2026-11-01T19:07:35.257Z] TotalTime taken to registerUser: 6168ms
+[2026-11-01T19:07:39.321Z] TotalTime taken to LoginUser: 10233ms
+[2026-11-01T19:07:53.179Z] TotalTime taken to Purchase Product: 24091ms
+[2026-11-01T19:08:12.841Z] TotalTime taken to registerUser: 2450ms
+[2026-11-01T19:08:17.946Z] TotalTime taken to registerUser: 4196ms
+[2026-11-01T19:08:19.583Z] TotalTime taken to registerUser: 1371ms
+[2026-11-01T19:18:32.417Z] TotalTime taken to registerUser: 4954ms
+[2026-11-01T19:18:36.893Z] TotalTime taken to LoginUser: 9431ms
+[2026-11-01T19:18:39.780Z] TotalTime taken to ValidateMonitor's: 12318ms
+[2026-11-01T19:18:55.357Z] TotalTime taken to registerUser: 2822ms
+[2026-11-01T19:18:57.861Z] TotalTime taken to LoginUser: 5325ms
+[2026-11-01T19:19:22.369Z] TotalTime taken to registerUser: 7034ms
+[2026-11-01T19:19:27.419Z] TotalTime taken to LoginUser: 12096ms
+[2026-11-01T19:19:45.063Z] TotalTime taken to Purchase Product: 29739ms
+[2026-11-01T19:20:11.161Z] TotalTime taken to registerUser: 5200ms
+[2026-11-01T19:20:13.413Z] TotalTime taken to registerUser: 1731ms
+[2026-11-01T19:20:14.507Z] TotalTime taken to registerUser: 996ms

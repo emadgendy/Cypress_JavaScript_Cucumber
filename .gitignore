@@ -1,2 +1,4 @@
 node_modules/
 demo.cy.js
+cypress\logs
+cypress\reports

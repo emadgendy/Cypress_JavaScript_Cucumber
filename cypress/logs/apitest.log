@@ -1267,3 +1267,14 @@ Validated products for getproduct call
 [2026-11-01T18:36:00.077Z] Validated updated product quantity
 [2026-11-01T18:36:02.976Z] Validated API error: Error in authorization format
 [2026-11-01T18:36:03.321Z] Validated API error: Error access_token is revoked
+[2026-11-01T19:05:27.837Z] Validated expected devices in product response
+[2026-11-01T19:05:28.444Z] Validated product names and cost in response
+[2026-11-01T19:05:28.763Z] Validated API error: Error access_token is revoked
+[2026-11-01T19:05:29.072Z] Validated API error: Error in authorization format
+[2026-11-01T19:05:32.052Z] Validated API login response with status 200
+[2026-11-01T19:05:32.367Z] Validated API response with status 401
+[2026-11-01T19:05:32.379Z] Validated API error: Incorrect email or password
+[2026-11-01T19:05:35.446Z] Validated newly created product
+[2026-11-01T19:05:39.366Z] Validated updated product quantity
+[2026-11-01T19:05:42.779Z] Validated API error: Error in authorization format
+[2026-11-01T19:05:43.129Z] Validated API error: Error access_token is revoked
