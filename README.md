@@ -67,6 +67,23 @@ To run database tests, use:
 npm run dbtest
 ```
 Database tests require `DB_HOST`, `DB_USER`, `DB_PASSWORD`, and `DB_NAME` environment variables. The database scenario is skipped when these are not configured.
+### Db2 database testing
+
+The framework can run a simple query against a local IBM Db2 Community Edition container. Docker Desktop with Linux containers is required. From the repository root, copy the example environment file and start Db2:
+
+```powershell
+Copy-Item .env.example .env
+npm run db2:up
+```
+
+The first startup may take several minutes while the image initializes. Wait for `docker compose ps` to show the Db2 service as healthy, then run:
+
+```powershell
+npm run db2test
+```
+
+The scenario executes `SELECT 1 AS RESULT FROM SYSIBM.SYSDUMMY1`. The compose file creates the `TESTDB` database on first initialization and persists it in the `db2data` volume. Use `npm run db2:down` to stop the container; this keeps the database volume. The sample password in `.env.example` is for local development only. Replace it for any shared environment. To configure a remote Db2 instance, set `DB2_HOST`, `DB2_PORT`, `DB2_USER`, `DB2_PASSWORD`, and `DB2_DATABASE` in `.env` or the process environment.
+
 To run every Gherkin scenario, use:
 ```
 npm test

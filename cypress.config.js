@@ -3,6 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 const mysql = require('mysql')
+const ibmdb = require('ibm_db');
+require('dotenv').config();
 const createBundler = require('@bahmutov/cypress-esbuild-preprocessor');
 const { addCucumberPreprocessorPlugin } = require('@badeball/cypress-cucumber-preprocessor');
 const { createEsbuildPlugin } = require('@badeball/cypress-cucumber-preprocessor/esbuild');
@@ -30,7 +32,8 @@ module.exports = defineConfig({
       require('cypress-mochawesome-reporter/plugin')(on);
       on('task',
         {
-          queryDb: query => { return queryTestDb(query, config) },
+          queryDb: query => queryTestDb(query, config),
+          queryDb2: query => queryDb2(query, config),
           loadUiTestData: () => yaml.load(fs.readFileSync(
             path.join(__dirname, 'cypress', 'support', 'TestData', 'ui-test-data.yaml'),
             'utf8',
@@ -45,23 +48,47 @@ module.exports = defineConfig({
       "user": process.env.DB_USER,
       "password": process.env.DB_PASSWORD,
       "database": process.env.DB_NAME
+    },
+    "db2": {
+      "host": process.env.DB2_HOST,
+      "port": Number(process.env.DB2_PORT) || 50000,
+      "user": process.env.DB2_USER,
+      "password": process.env.DB2_PASSWORD,
+      "database": process.env.DB2_DATABASE
     }
   }
 })
 
 function queryTestDb(query, config) {
-  // creates a new mysql connection using credentials from cypress.json env's
   const connection = mysql.createConnection(config.env.db)
-  // start connection to db
   connection.connect()
-  // exec query + disconnect to db as a Promise
   return new Promise((resolve, reject) => {
-      connection.query(query, (error, results) => {
-          if (error) reject(error)
-          else {
-              connection.end()
-              return resolve(results)
-          }
-      })
+    connection.query(query, (error, results) => {
+      if (error) reject(error)
+      else {
+        connection.end()
+        return resolve(results)
+      }
+    });
   })
+}
+
+function queryDb2(query, config) {
+  const { host, port, user, password, database } = config.env.db2;
+  const connectionString = [
+    `DATABASE=${database}`,
+    `HOSTNAME=${host}`,
+    `PORT=${port}`,
+    'PROTOCOL=TCPIP',
+    `UID=${user}`,
+    `PWD=${password}`,
+  ].join(';');
+
+  return ibmdb.open(connectionString).then(async connection => {
+    try {
+      return await connection.query(query);
+    } finally {
+      await connection.close();
+    }
+  });
 }

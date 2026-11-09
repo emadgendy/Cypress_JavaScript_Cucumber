@@ -11,7 +11,10 @@
     "uitest": "cross-env REPORT_NAME=UIReport cypress run --spec \"cypress/e2e/features/uiTest/**/*.feature\"",
     "apitest": "cross-env REPORT_NAME=APIReport cypress run --spec \"cypress/e2e/features/apiTest/**/*.feature,cypress/e2e/apiTest/**/*.feature,cypress/e2e/apiTest/**/*.spec.js\"",
     "cypress-dashboard": "npx cypress run --record --key 414d3363-6fe8-49db-ad55-3fcd3081d458",
-    "dbtest": "cypress run --spec \"cypress/e2e/features/database/**/*.feature\""
+    "dbtest": "cypress run --spec \"cypress/e2e/features/database/**/*.feature\"",
+    "db2test": "cypress run --spec \"cypress/e2e/features/database/db2.feature\"",
+    "db2:up": "docker compose up -d",
+    "db2:down": "docker compose down"
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": [
@@ -22,6 +25,8 @@
   "license": "ISC",
   "dependencies": {
     "@faker-js/faker": "^8.0.2",
+    "dotenv": "^16.4.7",
+    "ibm_db": "4.1.0",
     "jsonpath-plus": "^7.2.0",
     "mocha": "^10.2.0",
     "mysql": "^2.18.1"
@@ -43,8 +48,12 @@
   },
   "allowScripts": {
     "cypress@13.1.0": true,
+    "ibm_db": true,
     "esbuild@0.19.12": true,
     "esbuild@0.23.1": true,
     "esbuild@0.21.5": true
+  },
+  "config": {
+    "clidriver": "v11.5.9"
   }
 }

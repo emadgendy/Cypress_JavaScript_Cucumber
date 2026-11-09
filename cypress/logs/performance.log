@@ -234,3 +234,41 @@
 [2026-11-01T19:20:11.161Z] TotalTime taken to registerUser: 5200ms
 [2026-11-01T19:20:13.413Z] TotalTime taken to registerUser: 1731ms
 [2026-11-01T19:20:14.507Z] TotalTime taken to registerUser: 996ms
+[2026-11-06T20:46:14.094Z] TotalTime taken to registerUser: 2945ms
+[2026-11-06T20:46:16.479Z] TotalTime taken to LoginUser: 5330ms
+[2026-11-06T20:46:17.173Z] TotalTime taken to ValidateMonitor's: 6024ms
+[2026-11-06T20:46:25.626Z] TotalTime taken to registerUser: 1938ms
+[2026-11-06T20:46:34.986Z] TotalTime taken to registerUser: 2002ms
+[2026-11-06T20:46:45.069Z] TotalTime taken to registerUser: 1980ms
+[2026-11-06T20:46:46.824Z] TotalTime taken to registerUser: 1680ms
+[2026-11-06T20:46:47.591Z] TotalTime taken to registerUser: 694ms
+[2026-11-09T14:03:21.727Z] TotalTime taken to registerUser: 2511ms
+[2026-11-09T14:03:33.339Z] TotalTime taken to registerUser: 2358ms
+[2026-11-09T14:03:44.102Z] TotalTime taken to registerUser: 2350ms
+[2026-11-09T14:03:46.315Z] TotalTime taken to LoginUser: 4564ms
+[2026-11-09T14:03:53.046Z] TotalTime taken to Purchase Product: 11295ms
+[2026-11-09T14:04:02.926Z] TotalTime taken to registerUser: 1857ms
+[2026-11-09T14:04:04.570Z] TotalTime taken to registerUser: 1586ms
+[2026-11-09T14:04:05.292Z] TotalTime taken to registerUser: 668ms
+[2026-11-09T14:18:30.060Z] TotalTime taken to registerUser: 2366ms
+[2026-11-09T14:18:32.297Z] TotalTime taken to LoginUser: 4603ms
+[2026-11-09T14:18:41.108Z] TotalTime taken to registerUser: 3147ms
+[2026-11-09T14:18:43.011Z] TotalTime taken to LoginUser: 5049ms
+[2026-11-09T14:18:43.513Z] TotalTime taken to ValidateMonitor's: 5552ms
+[2026-11-09T14:22:22.993Z] TotalTime taken to registerUser: 2067ms
+[2026-11-09T14:22:31.610Z] TotalTime taken to registerUser: 2227ms
+[2026-11-09T14:22:33.715Z] TotalTime taken to LoginUser: 4332ms
+[2026-11-09T14:22:41.555Z] TotalTime taken to registerUser: 2457ms
+[2026-11-09T14:22:43.264Z] TotalTime taken to LoginUser: 4166ms
+[2026-11-09T14:22:49.943Z] TotalTime taken to Purchase Product: 10844ms
+[2026-11-09T14:23:01.146Z] TotalTime taken to registerUser: 2180ms
+[2026-11-09T14:23:03.046Z] TotalTime taken to registerUser: 1780ms
+[2026-11-09T14:23:03.893Z] TotalTime taken to registerUser: 781ms
+[2026-11-09T14:26:48.289Z] TotalTime taken to registerUser: 2673ms
+[2026-11-09T14:26:58.789Z] TotalTime taken to registerUser: 4029ms
+[2026-11-09T14:27:08.956Z] TotalTime taken to registerUser: 4020ms
+[2026-11-09T14:27:10.646Z] TotalTime taken to LoginUser: 5711ms
+[2026-11-09T14:27:15.931Z] TotalTime taken to Purchase Product: 10996ms
+[2026-11-09T14:27:24.331Z] TotalTime taken to registerUser: 2004ms
+[2026-11-09T14:27:26.065Z] TotalTime taken to registerUser: 1679ms
+[2026-11-09T14:27:27.316Z] TotalTime taken to registerUser: 1204ms
